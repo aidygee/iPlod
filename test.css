@@ -1,0 +1,84 @@
+#slider {
+	width:600px;
+	margin-left:150px;
+
+
+}
+.slider-wrapper{
+	width:1166px;
+	height:50px;
+	background: black;
+	margin:auto;
+	padding:20px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+.allVideos{
+	display: block;
+	width: 900px;
+	float:left;
+	
+
+}
+.video-wrapper {
+	float:left;
+	overflow: hidden;
+	position: relative;
+
+}
+.wrapper {
+	float:right;
+	width:100%;
+	height:720px;
+	position: relative;
+}
+.sidebar {
+	width:300px;
+	height:630px;
+	float:right;
+	
+	overflow: auto;
+	
+}
+
+.add-button{
+	float: left;
+
+	z-index: 2;
+}
+.videos{
+	padding-bottom: 20px;
+	background: black;
+}
+
+.remove-video{
+	position:absolute;
+	top:0;
+	right:0;
+	z-index: 1000;
+
+}
+.time-bar{
+	float:left;
+	width:11%;
+	height:663px;
+	background: black;
+	padding:2%;
+}
+.time-info{
+	width:100%;
+	display:block;
+	margin-top: 2%;
+	overflow: hidden;
+
+}
+.time-info input{
+	float:left;
+	width:20px;	
+}
+.time-info label{
+	float:left;
+	color: white;
+	
+}

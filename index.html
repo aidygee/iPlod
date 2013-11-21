@@ -1,0 +1,62 @@
+<html ng-app>
+<head>
+ <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <link rel="stylesheet" href="test.css"/>
+   <link href="video-js.css" rel="stylesheet">
+ <script src="video.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+ <script src="videoHandler.js"></script>
+
+ <script type="text/javascript">
+ $(function() {
+    $( "#slider" ).slider({
+    	min: 0,
+      max: 30,
+      value: 0
+    });
+  });
+ 
+  $( "#amount" ).val( $( "#slider" ).slider( "value" ) );
+  </script>
+</head>
+<body>
+<div class="wrapper" ng-controller="videos" >
+	<div class="time-bar">
+		<div class="time-info" ng-repeat="item in panel">
+			<label>Video{{$index+1}} </label></br> <label>Time:</label><label>{{returnVideoEndTime($index)}}</label> 
+		</div>
+		<button ng-click="returnVideoEndTime(0)">Update Times</button>
+	</div>
+	<div class="allVideos">
+		<div class="video-wrapper" ng-repeat="videos in panel">
+			<button class="remove-video" ng-click="removeFromPanel($index)">x</button>
+			<video id="{{videos.id}}" class="video-js vjs-default-skin" preload="none" controls width="300" height="210"
+			      poster="" >
+			      <source src="{{videos.directory}}" type='video/mp4' />
+			</video>
+		</div>
+	</div>
+
+<div class="sidebar">
+	<div class="videos" ng-repeat="video in sidebar">
+		<video id="{{video.id}}" class="video-js vjs-default-skin" preload="none" controls width="300" height="210"
+			      poster="" data-setup="{}">
+			      <source src="{{video.directory}}" type='video/mp4' />
+		</video>-->
+		<button class="add-button" ng-click="addToPanel($index)">Add!</button>
+	</div>
+
+
+
+	<div class="slider-wrapper">
+	<button class="play-button" ng-click="playAll()">|></button>
+	<button ng-click='pauseAll()'> || </button>
+	<div id="slider" ></div>
+	</div>
+	</div>
+
+</body>
+
+</html>
